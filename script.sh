@@ -9,6 +9,9 @@ sudo swapon /swapfile
 sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
+# Subiendo el servicio de Apache.
+sudo service apache2 start
+
 # Copiando el archivo de configuración en la ruta indicada.
 sudo cp ~/practica4-auxiliary/configuracion.conf /etc/apache2/sites-available/
 
@@ -16,6 +19,7 @@ sudo cp ~/practica4-auxiliary/configuracion.conf /etc/apache2/sites-available/
 cd app1
 
 # Ejecutando la creación de fatjar
+chmod +x gradlew
 ./gradlew shadowjar
 
 # Subiendo la aplicación puerto por defecto.
@@ -25,6 +29,7 @@ java -jar ~/practica4-auxiliary/app1/build/libs/app.jar > ~/practica4-auxiliary/
 cd ../app2
 
 # Ejecutando la creación de fatjar
+chmod +x gradlew
 ./gradlew shadowjar
 
 # Subiendo la aplicación puerto por defecto.
