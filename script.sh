@@ -9,9 +9,6 @@ sudo swapon /swapfile
 sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
-# Instando los software necesarios para probar el concepto.
-sudo apt update && sudo apt -y install zip unzip nmap apache2 certbot tree
-
 # Copiando el archivo de configuración en la ruta indicada.
 sudo cp ~/practica4-auxiliary/configuracion.conf /etc/apache2/sites-available/
 
